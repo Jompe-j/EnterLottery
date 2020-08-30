@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace EnterLottery {
     internal class Program {
@@ -37,13 +38,7 @@ namespace EnterLottery {
         }
 
         private static bool IsNew(int[] row, int newNumber) {
-            foreach (var i in row) {
-                if (i == newNumber) {
-                    return false;
-                }
-            }
-
-            return true;
+            return row.All(i => i != newNumber);
         }
     }
 }
